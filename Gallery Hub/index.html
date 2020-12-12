@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" type="image/jpg" href="img1/gh3.jpg">
+
+	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+	<title>Gallery Hub</title>
+
+	<style>
+
+	@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+	* {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Header section */
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+}
+#header .header {
+	min-height: 8vh;
+	/*background-color: rgba(31, 30, 30, 0.24);*/
+	background-color: gray;
+	transition: .3s ease background-color;
+}
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	/*max-width: 1300px;*/
+	background-color: gray;
+	padding: 0 10px;
+}
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(31, 30, 30);
+	width: 100%;
+	height: 100vh;
+	
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: .5s ease left;
+}
+#header .nav-list ul.active {
+	left: 0%;
+}
+#header .nav-list ul a {
+	font-size: 2rem;
+	font-weight: 500;
+	width:100%
+	background-color:gray;
+	letter-spacing: .2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgba(240, 248, 255, 0.021);
+	font-size: 9rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: .3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+#header .nav-list ul li:hover a {
+	color: crimson;
+}
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(.8);
+	margin-right: 20px;
+}
+
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: hamburger_puls 1s ease infinite;
+}
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: yellow;
+	transition: .3s ease;
+	transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+	top: 8px;
+}
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+#header .hamburger.active .bar::after {
+	top: 0;
+}
+
+.brand h1 {
+	font-size: 2rem;
+	margin-left: 10px;
+	text-transform: uppercase;
+	color: white;
+
+}
+.brand h1 span {
+	color: crimson;
+}
+.brand a
+{
+	text-decoration: none;
+}
+
+/* End Header section */
+
+
+/* Media Query For Desktop */
+@media only screen and (min-width: 1200px) {
+	/* header */
+	#header .hamburger {
+		display: none;
+	}
+	#header .nav-list ul {
+		position: initial;
+		background-color: gray;
+		margin-right:20px;
+		font-size: 2rem;
+		display: block;
+		height: auto;
+		width: fit-content;
+		
+	}
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	#header .nav-list ul li a {
+		font-size: 1.8rem;
+	}
+	#header .nav-list ul a:after {
+		display: none;
+	}
+	/* End header */
+
+	#skills .skill-bottom .skill-item {
+		flex-basis: 22%;
+		margin: 1.5%;
+	}
+}
+
+/* Keyframes */
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1.4);
+	}
+}
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal {
+	100% {
+		color: white;
+	}
+}
+@keyframes text_reveal_name {
+	100% {
+		color: crimson;
+		font-weight: 500;
+	}
+}
+/* End Keyframes */
+
+footer{
+	position: fixed;
+	bottom: 0;
+}
+
+@media (max-height:800px){
+	footer { position: static; }
+	header { padding-top:40px; }
+}
+
+
+.footer-distributed{
+	background-color: #2c292f;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 30%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+/* The company logo */
+
+.footer-distributed .footer-left img{
+	width: 30%;
+}
+
+.footer-distributed h3 span{
+	color:  #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: bold;
+	font-size:17px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #e0ac1c;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 30%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color: #33383b ;
+	border-radius: 12px;
+	text-decoration:none;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Here is the code for Responsive Footer */
+/* You can remove below code if you don't want Footer to be responsive */
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+
+
+	.main
+	{
+		position:relative;
+		height:100%;
+		width:100%;
+	}
+	.main h1
+	{
+		position: relative;
+		height: auto;
+		width:550px;
+		padding: 30px;
+		left:50%;
+		transform:translateX(-50%);
+	/*	margin:5% 0 2% 0;*/
+	margin-top:15%;
+	margin-bottom: 2%;
+		text-align:center;
+		
+		font-size: 2.8em;
+		font-weight: 650;
+		letter-spacing: 1.5px;
+		color:red;
+		border-left:5px solid red;
+		border-right: 5px solid red;
+		background:rgba(0,0,0,0.05);
+	}
+	.main p
+	{
+		position: relative;
+		height: 100%;
+		
+		width:100%;
+		text-align: center;
+		font-weight: 500;
+		font-size: 1.5em;
+		letter-spacing: 1px;
+		color:blue;
+	}
+	.main .gallery
+	{
+		position:relative;
+		height:auto;
+		width:90%;
+		margin:auto;
+		padding:45px 0;
+		display:grid;
+		grid-template-columns: auto auto auto auto;
+		grid-gap: 2vh;
+		grid-auto-flow:dense;
+		cursor: pointer;
+	}
+
+	.main .gallery .img
+	{
+		position: relative;
+		height: 100%;
+		width:100%;
+		overflow: hidden;
+	    box-shadow: 0px 2px 2px rgba(0,0,0,0.9);
+	    border-radius: 2px;
+	}
+	.main .gallery .img:first-child
+	{
+		grid-column-start: span 2;
+		grid-row-start: span 2;
+	}
+	.main .gallery .img:nth-child(2n+3)
+	{
+		
+		grid-row-start: span 2;
+	}
+	.main .gallery .img:nth-child(4n+5)
+	{
+		grid-column-start: span 2;
+		grid-row-start: span 2;
+	}
+	.main .gallery .img:nth-child(6n+7)
+	{
+		
+		grid-row-start: span 1;
+	}
+	.main .gallery .img:nth-child(8n+9)
+	{
+		grid-column-start: span 1;
+		grid-row-start: span 1;
+	}
+
+	.main .gallery .img img
+	{
+        height: 100%;
+        width:100%;
+        object-fit: cover;
+        filter:brightness(0.5) grayscale(100);
+        transition: 0.3 ease-in-out;
+        transition:all 0.3s ease-in;
+	}
+
+	.main .gallery .img:hover img
+	{
+		filter:brightness(1) grayscale(0);
+		transform:scale(0.98);
+	}
+
+/* Media Query For Tablet */
+@media only screen and (min-width: 768px) {
+	.cta {
+		font-size: 2.5rem;
+		padding: 20px 60px;
+	}
+	h1.section-title {
+		font-size: 6rem;
+	}
+
+	/* Hero */
+	#hero h1 {
+		font-size: 7rem;
+	}
+	/* End Hero */
+
+	/* skills Section */
+	#skills .skill-bottom .skill-item {
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+	/* End skills Section */
+
+	
+	/* End Project */
+
+	/* About */
+	#about .about {
+		flex-direction: row;
+	}
+	#about .col-left {
+		width: 600px;
+		height: 400px;
+		padding-left: 60px;
+	}
+	#about .about .col-left .about-img::after {
+		left: -45px;
+		top: 34px;
+		height: 98%;
+		width: 98%;
+		border: 10px solid crimson;
+	}
+	#about .col-right {
+		text-align: left;
+		padding: 30px;
+	}
+	#about .col-right h1 {
+		text-align: left;
+	}
+	/* End About */
+/* contact  */
+	#contact .contact {
+		flex-direction: column;
+		padding: 100px 0;
+		align-items: center;
+		justify-content: center;
+		min-width: 20vh;
+	}
+	#contact .contact-items {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin: 0;
+	}
+	#contact .contact-item {
+		width: 30%;
+		margin: 0;
+		flex-direction: row;
+	}
+	#contact .contact-item .icon {
+		height: 100px;
+		width: 100px;
+	}
+	#contact .contact-item .icon img {
+		object-fit: contain;
+	}
+	#contact .contact-item .contact-info {
+		width: 100%;
+		text-align: left;
+		padding-left: 20px;
+	}
+	/* End contact  */
+}
+	@media only screen and (max-width: 768px)
+	{
+		.main h1
+		{
+			margin-top: 20%;
+			margin-bottom: 4%;
+			font-size: 1.5em;
+			width:300px;
+			padding:20px;
+		}
+		.main p
+		{
+			font-size: 1.2em;
+			
+			}
+		.main .gallery
+		{
+			display:grid;
+			grid-template-columns: auto auto auto;
+		}
+		.brand h1 {
+	font-size: 1.8rem;
+	margin-left: 10px;
+	text-transform: uppercase;
+	color: white;
+
+}
+
+	}
+
+
+	@media only screen and (max-width: 425px)
+	{
+		.main h1
+		{
+			margin-top: 25%;
+			font-size: 1.8em;
+			width:250px;
+		}
+		.main p
+		{
+			font-size:1.5em;
+			
+			}
+		.main .gallery
+		{
+			display:block;
+			
+		}
+		.main .gallery .img
+		{
+			display:block;
+			width:100%;
+			height: 100%;
+			margin:2% 0;
+		}
+		.main .gallery .img img
+		{
+			display:block;
+			filter:brightness(0.5) grayscale(100);
+			transition:all 0.3s ease-in;
+		}
+	}
+
+
+	</style>
+</head>
+<body>
+	<section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero"><h1><span>S</span>umi<span>t</span> <span>K</span>uma<span>r</span></h1></a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger"><div class="bar"></div></div>
+          <ul>
+            <li><a href="#hero" data-after="Home">Home</a></li>
+            <li><a href="upload.html" data-after="Upload">Upload Here</a></li>
+            <li><a href="about.html" data-after="About">About</a></li>
+            <li><a href="contactus.html" data-after="Contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+	
+	<div class="main" id="home">
+		<h1>Gallery Hub</h1>
+		<p>Nature is a Real Beauty:
+           <br><br>
+
+           Move Cursor On Pic/ Click on Pic:
+		</p>
+
+		<div class="gallery">
+			<div class="img">
+				<img src="./img1/1.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/2.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/3.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/4.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/5.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/6.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/7.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/8.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/9.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/10.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/11.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/12.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/13.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/14.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/15.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/16.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/17.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/18.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/19.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/20.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/21.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/22.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/23.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/82.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/25.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/26.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/27.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/28.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/83.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/30.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/31.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/32.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/33.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/34.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/35.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/36.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/37.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/38.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/39.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/40.jpg">
+			</div>
+
+			<div class="img">
+				<img src="./img1/41.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/42.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/43.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/44.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/45.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/46.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/47.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/48.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/49.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/50.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/51.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/52.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/53.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/54.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/55.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/56.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/57.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/58.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/59.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/60.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/61.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/62.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/63.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/64.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/65.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/66.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/67.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/68.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/69.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/70.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/71.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/72.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/73.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/74.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/75.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/76.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/77.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/78.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/79.jpg">
+			</div>
+			<div class="img">
+				<img src="./img1/80.jpg">
+			</div>
+			
+			
+			
+		</div>
+    </div>
+
+  </div>
+
+
+  <footer class="footer-distributed">
+
+			<div class="footer-left">
+          <img src="./img1/2.jpg">
+				<h3>Gallery <span>Hub</span></h3>
+
+				<p class="footer-links">
+					<a href="#">Home</a>
+					|
+					<a href="upload.html">Upload Here</a>
+					|
+					<a href="about.html">About</a>
+					|
+					<a href="contactus.html">Contact Us</a>
+				</p>
+
+				<p class="footer-company-name">© 2020 Galley Hub one of the best Gallery!!</p>
+			</div>
+
+			<div class="footer-center">
+				<div>
+					<i class="fa fa-map-marker"></i>
+					  <p><span>Lovely Professional University</span>
+						 Phagwara, Punjab, 144411</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+91 9919971816</p>
+				</div>
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="sumitkumar17012000@gmail.com">sumitkumar17012000@gmail.com</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About the Gallery Hub</span>
+					    Gallery hub Founded by Sumit Yadav. This is one of the best
+					     Gallery!!</p>
+				<div class="footer-icons">
+					<a href="https://www.facebook.com/profile.php?id=100009872647400" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com/Sumitku05721666" class="fa fa-twitter"></a>
+                    <a href="https://www.linkedin.com/in/sumit-kumar-0a2a79171/" class="fa fa-linkedin"></a>
+                    <a href="https://www.instagram.com/ansh_s_yadav/?hl=en" class="fa fa-instagram"></a>
+					
+				</div>
+			</div>
+		</footer>
+	<script>
+		const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+const header = document.querySelector('.header.container');
+
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active');
+	mobile_menu.classList.toggle('active');
+});
+
+document.addEventListener('scroll', () => {
+	var scroll_position = window.scrollY;
+	if (scroll_position > 250) {
+		header.style.backgroundColor = '#29323c';
+	} else {
+		header.style.backgroundColor = 'transparent';
+	}
+});
+
+menu_item.forEach((item) => {
+	item.addEventListener('click', () => {
+		hamburger.classList.toggle('active');
+		mobile_menu.classList.toggle('active');
+	});
+});
+	</script>
+</body>
+</html>

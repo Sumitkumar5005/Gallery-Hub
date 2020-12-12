@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<title>About Me</title>
+
+<style>
+	body
+	{
+		height: 100vh;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #000;
+	}
+	.img-wrap{width:100%}
+	.img-wrap img{width: 100%;
+		padding:10px;
+	    border-radius: 50%;
+	    width:400px;
+	    height: 400px;
+	    box-shadow: 0 0 30px #ffff}
+
+	  #aboutus h1
+	  {
+	  	color:#fff;
+	  	font-weight: 600;
+	  	font-size:50px;
+	  	letter-spacing:0.7rem;
+	  margin-top: 30px;
+	  	/*margin-bottom: 25px;*/
+	  	text-shadow: 6px 6px 10px red;
+	    font-family: sans-serif;
+	    animation: reveal 7s infinite forwards;
+			animation-delay: 1s;
+			animation-duration: 7s;
+			/*animation-iteration-count: 2;*/
+			/*animation-timing-function: linear;*/
+
+	  	
+	  }
+	  
+	  #aboutus p
+	  {
+	  	margin-top:40px;
+	  	margin-left:50px;
+	  	color:#fff;
+	  	font-size: 18px;
+	  }
+	  #aboutus h2
+	  {
+	  	margin-top: 35px;
+	  	font-size: 20px;
+	  	margin-left: 20%;
+	  	color:#fff;
+	  }
+
+	  @keyframes reveal
+		{
+			/*from
+			{
+				left:0px;
+			}
+			to {
+				left:400px;
+				background-color: skyblue;
+
+			}*/
+			0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+		}
+
+
+		
+</style>
+</head>
+<body>
+	<section id="aboutus">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-7">
+					<h1 class="text-center">Sumit Kumar </h1>
+					<h2>Web Developer | Graphic Designer</h2>
+					<p>My Name is Sumit Yadav. I am a Web Developer as well as Graphic Designer(posters/Logo). I am Persuing B.tech in Computer Science from Lovely Professional University, I am a Simple Person and I always believe in High thinking. </p>
+
+					<p>I am very Passionate about Developing and Designing. I have many skills like Data Handling with Excel, Web developing, Poster and logo Designing, In addition My Hobbies are  Cricket, Dancing.</p>
+				</div>
+				<div class="col-sm-5 text-center">
+					<div class="img-wrap">
+						<img src="./img1/myimage.jpeg">
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Our Team</title>
+
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+
+		body
+		{
+			background-color: #2980B9 ;
+		}
+		.team
+		{
+			margin:75px 0;
+		}
+
+		h1
+		{
+			text-align: center;
+			font-weight: bold;
+			letter-spacing: 2px;
+			color: #fff;
+			padding-bottom: 10px;
+		}
+		h1:after
+		{
+			content: '';
+			background:crimson;
+			display:block;
+			height:3px;
+			width:200px;
+			margin:10px auto;
+		}
+
+		.profile
+		{
+			margin-top:25px;
+		}
+
+		.profile .img-box
+		{
+			opacity:1;
+			display:block;
+			position:relative;
+			border-radius: 50%;
+
+		}
+
+		.profile h2
+		{
+			font-size:28px;
+			font-weight: bold;
+			margin-top: 15px;
+			color:#fff;
+		}
+		.profile h3
+		{
+			font-size:18px;
+			font-weight: bold;
+			margin-top: 15px;
+			color:#fff;
+		}
+
+		.img-box:after
+		{
+			content: '';
+			opacity:0;
+			background-color: rgba(0,0,0,0.6);
+			position:absolute;
+			right: 0;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			border-radius:50%;
+			
+		}
+
+		.img-box ul
+		{
+			margin:0;
+			padding:20px 0;
+			position: absolute;
+			z-index: 1;
+			bottom: 0;
+			display: block;
+			left: 50%;
+			transform: translateX(-50%);
+			opacity: 0;
+		}
+
+		.img-box ul li
+		{
+			width:40px;
+			height: 40px;
+			border:1px solid #fff;
+			margin:3px;
+
+			padding:7px;
+			border-radius: 50%;
+			display: inline-block;
+		}
+       .img-box img
+       {
+       	width:300px;
+       	 height:300px;
+       	 border-radius: 50%;
+       	 
+
+       }
+		.img-box a
+		{
+			color:#fff;
+		}
+
+		.img-box:hover:after
+		{
+              opacity: 1;
+		}
+
+		.img-box:hover ul
+		{
+			opacity: 1;
+		}
+
+		.img-box a:hover li
+		{
+			color:#007bff;
+			border:1px solid #007bff;
+
+		}
+	</style>
+</head>
+<body>
+	<section class="team">
+		<div class="container">
+			<h1>Our Team</h1>
+          <div class="row">
+			<div class="col-md-4 profile text-center">
+				
+				<div class="img-box">
+                   <img src="./img1/myimage.jpeg" alt="pic" class="img-responsive">
+
+                   <ul>
+                   	  <a href="#"><li><i class="fa fa-facebook" aria-hidden="true"></i></li></a>
+
+                   	  <a href="#"><li><i class="fa fa-twitter" aria-hidden="true"></i></li></a>
+
+                   	  <a href="#"><li><i class="fa fa-instagram" aria-hidden="true"></i></li></a>
+                   </ul>
+
+			    </div>
+
+			    <h2>Sumit Yadav</h2>
+			    <h3>Founder/CEO</h3>
+			    <p>This is a best Gallery</p>
+		    </div>
+
+		    <div class="col-md-4 profile text-center">
+				
+				<div class="img-box">
+                   <img src="./img1/myimage1.jpeg" alt="pic" class="img-responsive">
+
+                   <ul>
+                   	  <a href="#"><li><i class="fa fa-facebook" aria-hidden="true"></i></li></a>
+
+                   	  <a href="#"><li><i class="fa fa-twitter" aria-hidden="true"></i></li></a>
+
+                   	  <a href="#"><li><i class="fa fa-instagram" aria-hidden="true"></i></li></a>
+                   </ul>
+
+			    </div>
+
+			    <h2>Danish Ali</h2>
+			    <h3>Co-Founder</h3>
+			    <p>This is a best Gallery</p>
+		    </div>
+
+
+		    <div class="col-md-4 profile text-center">
+				
+				<div class="img-box">
+                   <img src="./img1/myimage2.jpeg" alt="pic" class="img-responsive">
+
+                   <ul>
+                   	  <a href="#"><li><i class="fa fa-facebook" aria-hidden="true"></i></li></a>
+
+                   	  <a href="#"><li><i class="fa fa-twitter" aria-hidden="true"></i></li></a>
+
+                   	  <a href="#"><li><i class="fa fa-instagram" aria-hidden="true"></i></li></a>
+                   </ul>
+
+			    </div>
+
+			    <h2>Akash Kushwah</h2>
+			    <h3>Data Analyst</h3>
+			    <p>This is a best Gallery</p>
+			</div>
+		    </div>
+		</div>
+	</section>
+</body>
+</html>
